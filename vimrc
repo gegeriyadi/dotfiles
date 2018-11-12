@@ -18,6 +18,9 @@ Plug 'jwalton512/vim-blade'
 Plug 'mattn/emmet-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jiangmiao/auto-pairs'
+Plug 'junegunn/goyo.vim'
+Plug 'moll/vim-bbye'
+Plug 'tpope/vim-commentary'
 
 call plug#end()
 
@@ -46,8 +49,8 @@ endif
 " deoplete
 let g:deoplete#enable_at_startup=1
 
-map <C-n> :NERDTreeToggle<CR>
-map <C-p> :Files<CR>
+map <C-N> :NERDTreeToggle<CR>
+map <C-P> :Files<CR>
 
 " tmuxline setting
 let g:tmuxline_powerline_separators=0
@@ -76,8 +79,8 @@ set incsearch		" Searches for strings incrementally
 set autoindent		" Auto-indent new lines
 set expandtab		" Use spaces instead of tabs
 set shiftwidth=4	" Number of auto-indent spaces
-set smartindent		" Enable smart-indent
-set smarttab		" Enable smart-tabs
+" set smartindent		" Enable smart-indent
+" set smarttab		" Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
  
 " Advanced
@@ -114,3 +117,14 @@ let g:blade_custom_directives_pairs = {
             \   'cache': 'endcache',
                   \ }
 
+" emmet
+" let g:user_emmet_leader_key='<C-E>'
+
+" WSL yank support
+let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
+if executable(s:clip)
+    augroup WSLYank
+        autocmd!
+        autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
+    augroup END
+end
