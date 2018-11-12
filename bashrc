@@ -116,21 +116,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# run tmux on startup
-[[ -z "$TMUX" && -n "$USE_TMUX" ]] && {
-    [[ -n "$ATTACH_ONLY" ]] && {
-        tmux a 2>/dev/null || {
-            cd && exec tmux
-        }
-        exit
-    }
-
-    tmux new-window -c "$PWD" 2>/dev/null && exec tmux a
-    exec tmux
-}
-
 # fish as default shell
 if [ -t 1 ]; then
-  exec fish
+    exec fish
 fi
 
