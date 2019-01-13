@@ -21,6 +21,8 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'moll/vim-bbye'
 Plug 'tpope/vim-commentary'
+Plug 'iamcco/markdown-preview.vim'
+Plug 'Chiel92/vim-autoformat'
 
 call plug#end()
 
@@ -47,7 +49,7 @@ endif
 endif
 
 " deoplete
-let g:deoplete#enable_at_startup=1
+" let g:deoplete#enable_at_startup=1
 
 map <C-N> :NERDTreeToggle<CR>
 map <C-P> :Files<CR>
@@ -67,7 +69,7 @@ set linespace=15
 set linebreak		" Break lines at word (requires Wrap lines)
 set showbreak=+++	" Wrap-broken line prefix
 set textwidth=100	" Line wrap (number of cols)
-set colorcolumn=80
+" set colorcolumn=80
 set showmatch		" Highlight matching brace
 set visualbell		" Use visual bell (no beeping)
  
@@ -79,8 +81,8 @@ set incsearch		" Searches for strings incrementally
 set autoindent		" Auto-indent new lines
 set expandtab		" Use spaces instead of tabs
 set shiftwidth=4	" Number of auto-indent spaces
-" set smartindent		" Enable smart-indent
-" set smarttab		" Enable smart-tabs
+set smartindent		" Enable smart-indent
+set smarttab		" Enable smart-tabs
 set softtabstop=4	" Number of spaces per Tab
  
 " Advanced
@@ -128,3 +130,9 @@ if executable(s:clip)
         autocmd TextYankPost * call system(s:clip, join(v:event.regcontents, "\<CR>"))
     augroup END
 end
+
+" markdown preview set
+let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
+
+" auto format on save
+au BufWrite * :Autoformat
