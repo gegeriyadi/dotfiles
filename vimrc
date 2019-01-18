@@ -104,6 +104,12 @@ nnoremap <F2> :bp<CR>
 " map for save
 nnoremap ;; :w<CR>
 
+" map for Buffers
+nnoremap buf :Buffers<CR>
+
+" map for noh
+nnoremap ,<space> :noh<CR>
+
 " disable arrow
 nnoremap <Up> :echomsg "use k"<cr>
 nnoremap <Down> :echomsg "use j"<cr>
