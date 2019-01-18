@@ -150,5 +150,5 @@ end
 let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 
 " auto format on save
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 
