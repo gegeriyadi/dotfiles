@@ -3,3 +3,4 @@
 	email = gegeriyadi81@gmail.com
 [core]
 	excludesfile = /home/gegeriyadi/.gitignore
+	editor = vim
