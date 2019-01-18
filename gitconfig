@@ -1,6 +1,6 @@
 [user]
-	name = gegeriyadi
-	email = gegeriyadi81@gmail.com
+    name = gegeriyadi
+    email = gegeriyadi81@gmail.com
 [core]
-	excludesfile = /home/gegeriyadi/.gitignore
-	editor = vim
+    excludesfile = /home/gegeriyadi/.gitignore
+    editor = vim
