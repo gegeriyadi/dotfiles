@@ -77,7 +77,7 @@ set number                      " Show line numbers
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
 set breakindent
-set showbreak=+++       " Wrap-broken line prefix
+set showbreak=>>       " Wrap-broken line prefix
 set textwidth=100       " Line wrap (number of cols)
 " set colorcolumn=80
 set showmatch           " Highlight matching brace
@@ -164,6 +164,10 @@ let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Applic
 set laststatus=2
 
 let g:prettier#config#tab_width=2
+
+" deoplete
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 
 autocmd BufRead,BufNewFile *.vue set sw=2 sts=2
 autocmd BufRead,BufNewFile *.blade.php set sw=2 sts=2
