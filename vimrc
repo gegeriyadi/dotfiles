@@ -5,13 +5,8 @@ Plug 'dracula/vim', { 'as': 'dracula' }
 Plug 'morhetz/gruvbox'
 Plug 'arcticicestudio/nord-vim'
 Plug 'joshdick/onedark.vim'
-Plug 'scrooloose/nerdtree'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
-Plug 'airblade/vim-gitgutter'
+Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
-Plug 'Valloric/YouCompleteMe'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'jwalton512/vim-blade'
@@ -23,17 +18,29 @@ Plug 'moll/vim-bbye'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'Chiel92/vim-autoformat'
 Plug 'tomtom/tcomment_vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+Plug 'posva/vim-vue'
+Plug 'prettier/vim-prettier', {
+  \ 'do': 'yarn install',
+  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
-let g:ycm_keep_logfiles = 1
-let g:ycm_log_level = 'debug'
-
 set background=dark
-colorscheme palenight
+colorscheme nord
 set t_Co=256
 
-let g:lightline = { 'colorscheme': 'palenight' }
+let g:lightline = { 'colorscheme':'nord' }
 
 " Italics for my favorite color scheme
 let g:palenight_terminal_italics=1
@@ -48,11 +55,12 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-" deoplete
-" let g:deoplete#enable_at_startup=1
-
-map <C-N> :NERDTreeToggle<CR>
+" fzf vim setting
 map <C-P> :Files<CR>
+nmap ff :call fzf#run({
+            \ 'source': 'git ls-files --exclude-standard --others --cached',
+            \ 'sink': 'edit'
+            \ })<Enter>
 
 " tmuxline setting
 let g:tmuxline_powerline_separators=0
@@ -62,11 +70,13 @@ let g:tmuxline_separators = {
             \ 'right' : '',
             \ 'right_alt' : '<',
             \ 'space' : ' '}
+let g:tmuxline_theme = 'Dracula'
 
 " General
 set number                      " Show line numbers
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
+set breakindent
 set showbreak=+++       " Wrap-broken line prefix
 set textwidth=100       " Line wrap (number of cols)
 " set colorcolumn=80
@@ -78,14 +88,13 @@ set smartcase           " Enable smart-case search
 set ignorecase          " Always case-insensitive
 set incsearch           " Searches for strings incrementally
 
+" set shiftwidth=2
+" set softtabstop=2
+
 set autoindent          " Auto-indent new lines
 set expandtab           " Use spaces instead of tabs
-set shiftwidth=4        " Number of auto-indent spaces
-" set shiftwidth=2      " for vueapp
 set smartindent         " Enable smart-indent
 set smarttab            " Enable smart-tabs
-set softtabstop=4       " Number of spaces per Tab
-" set softtabstop=2      " for vue app
 
 " Advanced
 set ruler                       " Show row and column ruler information
@@ -105,7 +114,7 @@ nnoremap <F2> :bp<CR>
 nnoremap ;; :w<CR>
 
 " map for Buffers
-nnoremap buf :Buffers<CR>
+" nnoremap buf :Buffers<CR>
 
 " map for noh
 nnoremap ,<space> :noh<CR>
@@ -151,4 +160,11 @@ let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Applic
 
 " auto format on save
 " au BufWrite * :Autoformat
+"
+set laststatus=2
 
+let g:prettier#config#tab_width=2
+
+autocmd BufRead,BufNewFile *.vue set sw=2 sts=2
+autocmd BufRead,BufNewFile *.blade.php set sw=2 sts=2
+autocmd BufRead,BufNewFile *.php set sw=4 sts=4
