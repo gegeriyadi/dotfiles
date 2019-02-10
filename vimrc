@@ -29,9 +29,6 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 Plug 'posva/vim-vue'
-Plug 'prettier/vim-prettier', {
-  \ 'do': 'yarn install',
-  \ 'for': ['javascript', 'typescript', 'css', 'less', 'scss', 'json', 'graphql', 'markdown', 'vue', 'yaml', 'html'] }
 Plug 'Yggdroot/indentLine'
 
 call plug#end()
@@ -162,8 +159,6 @@ let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Applic
 " au BufWrite * :Autoformat
 "
 set laststatus=2
-
-let g:prettier#config#tab_width=2
 
 " deoplete
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
