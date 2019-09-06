@@ -1,4 +1,4 @@
-# ~/.bashrc: executed by bash(1) for non-login shells.
+
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
@@ -118,7 +118,17 @@ fi
 
 # fish as default shell
 if [ -t 1 ]; then
-    exec fish
+   exec fish
 fi
 
 alias cddist="cd dist"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[ -f /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash ] && . /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.bash
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[ -f /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash ] && . /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.bash
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[ -f /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
