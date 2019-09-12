@@ -30,6 +30,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'neoclide/coc.nvim', {'do': './install.sh nightly'}
 Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
 Plug 'neoclide/coc.nvim', {'do': 'yarn install --frozen-lockfile'}
+Plug 'SirVer/ultisnips'
 
 call plug#end()
 
@@ -73,7 +74,7 @@ nmap ff :call fzf#run({
 " let g:tmuxline_theme = 'Nord'
 
 " General
-set number                      " Show line numbers
+set number              " Show line numbers
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
 set breakindent
@@ -129,6 +130,10 @@ nnoremap B ^
 nnoremap E $
 vnoremap E $
 
+autocmd BufRead,BufNewFile *.vue set sw=2 sts=2
+autocmd BufRead,BufNewFile *.blade.php set sw=2 sts=2
+autocmd BufRead,BufNewFile *.php set sw=4 sts=4
+
 " Define some single Blade directives. This variable is used for highlighting only.
 let g:blade_custom_directives = ['datetime', 'javascript']
 "
@@ -180,4 +185,7 @@ nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
+
+" ultisnips use python3
+let g:UltiSnipsUsePythonVersion = 3
 
