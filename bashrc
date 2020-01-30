@@ -116,11 +116,6 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# fish as default shell
-if [ -t 1 ]; then
-   exec fish
-fi
-
 alias cddist="cd dist"
 
 # tabtab source for serverless package
