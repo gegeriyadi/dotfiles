@@ -27,4 +27,6 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 export PATH=~/.npm-global/bin:$PATH
+export PATH=~/.composer/vendor/bin:$PATH
 
+eval $(/bin/brew shellenv)
