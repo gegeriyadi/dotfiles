@@ -115,7 +115,7 @@ nnoremap ;; :w<CR>
 
 " netrw setup
 let g:netrw_banner = 0
-set autochdir
+" set autochdir
 
 " set mouse=a
 
