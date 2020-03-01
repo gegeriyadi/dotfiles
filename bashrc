@@ -129,6 +129,3 @@ alias cddist="cd dist"
 [ -f /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
-export CF_API_EMAIL=me@gegeriyadi.com
-export CF_API_KEY=qgK4V_sWfkHbcua2QJ52SkVAm-4MwCrUBK6MVDyd
