@@ -29,4 +29,3 @@ fi
 export PATH=~/.npm-global/bin:$PATH
 export PATH=~/.composer/vendor/bin:$PATH
 
-eval $(/bin/brew shellenv)

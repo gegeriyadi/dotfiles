@@ -129,3 +129,4 @@ alias cddist="cd dist"
 [ -f /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash ] && . /home/gegeriyadi/.npm-global/lib/node_modules/serverless/node_modules/tabtab/.completions/slss.bash
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
