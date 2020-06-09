@@ -153,8 +153,8 @@ let g:blade_custom_directives_pairs = {
             \   'cache': 'endcache',
             \ }
 
-" emmet
-" let g:user_emmet_leader_key='<C-E>'
+" emmet: to trigger press double ,,
+let g:user_emmet_leader_key=','
 
 " WSL yank support
 let s:clip = '/mnt/c/Windows/System32/clip.exe'  " default location
@@ -200,3 +200,8 @@ nmap <silent> gr <Plug>(coc-references)
 let g:UltiSnipsUsePythonVersion = 3
 
 set directory=~/.vim/swapfiles/
+
+" change cursor when change mode
+let &t_SI = "\<esc>[5 q"
+let &t_SR = "\<esc>[5 q"
+let &t_EI = "\<esc>[2 q"
