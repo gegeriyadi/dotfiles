@@ -139,10 +139,11 @@ nnoremap B ^
 nnoremap E $
 vnoremap E $
 
-autocmd BufRead,BufNewFile *.vue set sw=2 sts=2
-autocmd BufRead,BufNewFile *.blade.php set sw=2 sts=2
-autocmd BufRead,BufNewFile *.php set sw=4 sts=4
-autocmd BufRead,BufNewFile *.css set sw=2 sts=2
+autocmd BufRead,BufNewFile *.blade.php set filetype=html 
+autocmd Filetype html set sw=2 ts=2 sts=2
+
+autocmd BufRead,BufNewFile *.vue set sw=2 ts=2 sts=2
+autocmd BufRead,BufNewFile *.css set sw=2 ts=2 sts=2
 
 " Define some single Blade directives. This variable is used for highlighting only.
 let g:blade_custom_directives = ['datetime', 'javascript']
