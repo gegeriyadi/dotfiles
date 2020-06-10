@@ -8,9 +8,9 @@ Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
 Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'jwalton512/vim-blade'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'edkolev/tmuxline.vim'
 Plug 'jiangmiao/auto-pairs'
@@ -62,11 +62,14 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
+" Always enable preview window on the right with 60% width
+let g:fzf_preview_window = 'right:60%'
+
 " fzf vim setting
 map <C-P> :Files<CR>
 nmap ff :call fzf#run({
             \ 'source': 'git ls-files --exclude-standard --others --cached',
-            \ 'sink': 'edit'
+            \ 'sink': 'tabedit'
             \ })<Enter>
 
 " tmuxline setting
@@ -117,7 +120,7 @@ nnoremap ;; :w<CR>
 let g:netrw_banner = 0
 " set autochdir
 
-" set mouse=a
+set mouse=a
 
 " map for noh
 nnoremap ,<space> :noh<CR>
