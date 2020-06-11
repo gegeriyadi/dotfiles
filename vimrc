@@ -43,6 +43,9 @@ Plug 'SirVer/ultisnips'
 
 call plug#end()
 
+" set leader key
+let mapleader=","
+
 set background=dark
 colorscheme gruvbox
 set t_Co=256
@@ -131,7 +134,7 @@ nnoremap <Down> :echomsg "use j"<cr>
 nnoremap <Left> :echomsg "use h"<cr>
 nnoremap <Right> :echomsg "use l"<cr>
 
-" split panel shortcut
+" split panel shortcut movement
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
@@ -209,4 +212,7 @@ let &t_SR = "\<esc>[5 q"
 let &t_EI = "\<esc>[2 q"
 
 " remap q simple recording
-:nnoremap <Space> @q
+nnoremap <Space> @q
+
+" remap tabedit
+nnoremap te :tabedit<CR>
