@@ -144,7 +144,7 @@ vnoremap E $
 
 filetype plugin indent on
 
-autocmd BufRead,BufNewFile *.blade.php set filetype=html 
+autocmd BufRead,BufNewFile *.blade.php set filetype=blade
 
 " Define some single Blade directives. This variable is used for highlighting only.
 let g:blade_custom_directives = ['datetime', 'javascript']

@@ -15,5 +15,6 @@ ln -s ~/.dotfiles/vim/after/ftplugin/php.vim ~/.vim/after/ftplugin/php.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/vue.vim ~/.vim/after/ftplugin/vue.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/css.vim ~/.vim/after/ftplugin/css.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/js.vim ~/.vim/after/ftplugin/js.vim
+ln -s ~/.dotfiles/vim/after/ftplugin/blade.vim ~/.vim/after/ftplugin/blade.vim
 
 echo "dotfile installed!"
