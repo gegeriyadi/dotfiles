@@ -1,7 +1,6 @@
 #!/bin/bash
 
-mkdir -p ~/.dotfiles
-cp * ~/.dotfiles/
+git clone git@github.com:gegeriyadi/dotfiles.git ~/.dotfiles
 
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
