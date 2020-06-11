@@ -69,7 +69,7 @@ let g:fzf_preview_window = 'right:60%'
 map <C-P> :Files<CR>
 nmap ff :call fzf#run({
             \ 'source': 'git ls-files --exclude-standard --others --cached',
-            \ 'sink': 'tabedit'
+            \ 'sink': 'edit'
             \ })<Enter>
 
 " tmuxline setting
@@ -142,11 +142,9 @@ nnoremap B ^
 nnoremap E $
 vnoremap E $
 
-autocmd BufRead,BufNewFile *.blade.php set filetype=html 
-autocmd Filetype html set sw=2 ts=2 sts=2
+filetype plugin indent on
 
-autocmd BufRead,BufNewFile *.vue set sw=2 ts=2 sts=2
-autocmd BufRead,BufNewFile *.css set sw=2 ts=2 sts=2
+autocmd BufRead,BufNewFile *.blade.php set filetype=html 
 
 " Define some single Blade directives. This variable is used for highlighting only.
 let g:blade_custom_directives = ['datetime', 'javascript']
