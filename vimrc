@@ -65,14 +65,11 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-" Always enable preview window on the right with 60% width
-let g:fzf_preview_window = 'right:60%'
-
 " fzf vim setting
-map <C-P> :Files<CR>
-nmap ff :call fzf#run({
+nmap <C-p> :call fzf#run({
             \ 'source': 'git ls-files --exclude-standard --others --cached',
-            \ 'sink': 'edit'
+            \ 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Normal', 'rounded': v:false },
+            \ 'sink': 'tabedit'
             \ })<Enter>
 
 " tmuxline setting
