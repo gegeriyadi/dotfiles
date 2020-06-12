@@ -213,3 +213,4 @@ nnoremap <Space> @q
 
 " remap tabedit
 nnoremap te :tabedit<CR>
+
