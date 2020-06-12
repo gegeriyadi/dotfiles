@@ -66,10 +66,10 @@ if (has("termguicolors"))
 endif
 
 " fzf vim setting
-nmap <C-p> :call fzf#run({
+nmap ff :call fzf#run({
             \ 'source': 'git ls-files --exclude-standard --others --cached',
             \ 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Normal', 'rounded': v:false },
-            \ 'sink': 'tabedit'
+            \ 'sink': 'edit'
             \ })<Enter>
 
 " tmuxline setting
