@@ -1,5 +1,4 @@
-wget https://raw.githubusercontent.com/gegeriyadi/dotfiles/master/install.sh
+Install with this command
 
-chmod u+x install.sh
+curl https://raw.githubusercontent.com/gegeriyadi/dotfiles/master/install.sh | bash
 
-./install.sh
