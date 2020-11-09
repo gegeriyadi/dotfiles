@@ -1,12 +1,8 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'drewtempelmeyer/palenight.vim'
-Plug 'dracula/vim', { 'as': 'dracula' }
-Plug 'morhetz/gruvbox'
-Plug 'joshdick/onedark.vim'
+Plug 'reedes/vim-colors-pencil'
 Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
-Plug 'itchyny/lightline.vim'
 Plug 'StanAngeloff/php.vim'
 Plug 'jwalton512/vim-blade'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
@@ -46,16 +42,19 @@ call plug#end()
 " set leader key
 let mapleader=","
 
-set background=dark
-colorscheme gruvbox
 set t_Co=256
+set background=light
+colorscheme pencil
 
 " markdown
 set conceallevel=0
 
-let g:lightline = { 'colorscheme':'gruvbox' }
+" let g:lightline = { 'colorscheme':'pencil' }
 
 highlight Comment cterm=italic
+highlight phpInclude cterm=italic guifg=#E32791
+highlight phpKeyword cterm=italic guifg=#E32791
+highlight phpType cterm=italic guifg=#E32791
 
 if (has("nvim"))
     let $NVIM_TUI_ENABLE_TRUE_COLOR=1
@@ -121,7 +120,7 @@ nnoremap ;; :w<CR>
 let g:netrw_banner = 0
 " set autochdir
 
-set mouse=a
+" set mouse=a
 
 " map for noh
 nnoremap ,<space> :noh<CR>
@@ -215,3 +214,4 @@ nnoremap <Space> @q
 " remap tabedit
 nnoremap te :tabedit<CR>
 
+highlight htmlArg cterm=italic
