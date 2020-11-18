@@ -1,6 +1,6 @@
 #!/bin/bash
 
-git clone git@github.com:gegeriyadi/dotfiles.git
+git clone https://github.com/gegeriyadi/dotfiles.git
 mv dotfiles .dotfiles
 ln -s ~/.dotfiles/vimrc ~/.vimrc
 ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
