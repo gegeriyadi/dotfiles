@@ -36,6 +36,7 @@ Plug 'prettier/vim-prettier', {
     \ 'html' ] }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
+Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -49,7 +50,7 @@ colorscheme pencil
 " markdown
 set conceallevel=0
 
-" let g:lightline = { 'colorscheme':'pencil' }
+let g:lightline = { 'colorscheme':'Tomorrow' }
 
 highlight Comment cterm=italic
 highlight phpInclude cterm=italic guifg=#E32791
@@ -116,11 +117,16 @@ inoremap kk <ESC>
 " map for save
 nnoremap ;; :w<CR>
 
+" map for buffer
+nnoremap gn :bn<CR>
+nnoremap gp :bp<CR>
+nnoremap gd :bd<CR>
+
 " netrw setup
 let g:netrw_banner = 0
 " set autochdir
 
-" set mouse=a
+set mouse=a
 
 " map for noh
 nnoremap ,<space> :noh<CR>
