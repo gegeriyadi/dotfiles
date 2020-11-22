@@ -16,4 +16,8 @@ ln -s ~/.dotfiles/vim/after/ftplugin/css.vim ~/.vim/after/ftplugin/css.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/js.vim ~/.vim/after/ftplugin/js.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/blade.vim ~/.vim/after/ftplugin/blade.vim
 
+# install vim plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
 echo "dotfile installed!"
