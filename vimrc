@@ -1,6 +1,6 @@
 call plug#begin('~/.vim/plugged')
 
-Plug 'reedes/vim-colors-pencil'
+Plug 'joshdick/onedark.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'trevordmiller/nova-vim'
 Plug 'StanAngeloff/php.vim'
@@ -37,6 +37,7 @@ Plug 'prettier/vim-prettier', {
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'itchyny/lightline.vim'
+Plug 'arnaud-lb/vim-php-namespace'
 
 call plug#end()
 
@@ -44,8 +45,8 @@ call plug#end()
 let mapleader=","
 
 set t_Co=256
-set background=light
-colorscheme pencil
+set background=dark
+colorscheme onedark
 
 " markdown
 set conceallevel=0
@@ -84,7 +85,8 @@ let g:tmuxline_separators = {
 
 " General
 " set number              " Show line numbers
-set number relativenumber
+" set number relativenumber
+set foldcolumn=3        " add margin on left vim
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
 set breakindent
@@ -179,7 +181,7 @@ let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Applic
 set laststatus=2
 
 let g:prettier#autoformat = 0
-" autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html Prettier
+autocmd BufWritePre *.js,*.jsx,*.mjs,*.ts,*.tsx,*.css,*.less,*.scss,*.json,*.graphql,*.md,*.vue,*.yaml,*.html PrettierAsync
 
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
@@ -221,3 +223,11 @@ nnoremap <Space> @q
 nnoremap te :tabedit<CR>
 
 highlight htmlArg cterm=italic
+
+" vim namespace
+function! IPhpInsertUse()
+    call PhpInsertUse()
+    call feedkeys('a',  'n')
+endfunction
+autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
+autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
