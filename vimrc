@@ -36,7 +36,6 @@ Plug 'prettier/vim-prettier', {
     \ 'html' ] }
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
-Plug 'itchyny/lightline.vim'
 Plug 'arnaud-lb/vim-php-namespace'
 
 call plug#end()
@@ -50,8 +49,6 @@ colorscheme onedark
 
 " markdown
 set conceallevel=0
-
-let g:lightline = { 'colorscheme':'Tomorrow' }
 
 highlight Comment cterm=italic
 highlight phpInclude cterm=italic guifg=#E32791
@@ -84,9 +81,9 @@ let g:tmuxline_separators = {
 " let g:tmuxline_theme = 'Nord'
 
 " General
-" set number              " Show line numbers
-" set number relativenumber
-set foldcolumn=3        " add margin on left vim
+set number              " Show line numbers
+set number relativenumber
+" set foldcolumn=3        " add margin on left vim
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
 set breakindent
@@ -178,6 +175,9 @@ end
 " markdown preview set
 let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 
+python3 from powerline.vim import setup as powerline_setup
+python3 powerline_setup()
+python3 del powerline_setup
 set laststatus=2
 
 let g:prettier#autoformat = 0
@@ -231,3 +231,6 @@ function! IPhpInsertUse()
 endfunction
 autocmd FileType php inoremap <Leader>u <Esc>:call IPhpInsertUse()<CR>
 autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
+
+let g:indentLine_char = '│'
+let g:indentLine_enabled = 1
