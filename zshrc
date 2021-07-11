@@ -8,7 +8,7 @@ export ZSH="/home/gegeriyadi/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -108,6 +108,8 @@ alias zshrc="vim ~/.zshrc"
 
 # git alias
 alias gs="git status"
-alias ga="git add ."
+alias ga="git add"
 alias gc="git commit -m"
 alias gp="git push"
+
+export PATH=/home/gegeriyadi/.local/bin:$PATH
