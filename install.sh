@@ -7,6 +7,7 @@ ln -s ~/.dotfiles/tmux.conf ~/.tmux.conf
 ln -s ~/.dotfiles/gitconfig ~/.gitconfig
 ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/bashrc ~/.bashrc
+ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/profile ~/.profile
 mkdir -p ~/.vim/after/ftplugin
 ln -s ~/.dotfiles/vim/after/ftplugin/html.vim ~/.vim/after/ftplugin/html.vim
