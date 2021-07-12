@@ -8,7 +8,6 @@ Plug 'jwalton512/vim-blade'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
-Plug 'edkolev/tmuxline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
 Plug 'moll/vim-bbye'
@@ -69,16 +68,6 @@ nmap ff :call fzf#run({
             \ 'window': { 'width': 0.9, 'height': 0.6, 'highlight': 'Normal', 'rounded': v:false },
             \ 'sink': 'edit'
             \ })<Enter>
-
-" tmuxline setting
-let g:tmuxline_powerline_separators=0
-let g:tmuxline_separators = {
-            \ 'left' : '',
-            \ 'left_alt': '>',
-            \ 'right' : '',
-            \ 'right_alt' : '<',
-            \ 'space' : ' '}
-" let g:tmuxline_theme = 'Nord'
 
 " General
 set number              " Show line numbers
