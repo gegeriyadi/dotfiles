@@ -70,9 +70,9 @@ nmap ff :call fzf#run({
             \ })<Enter>
 
 " General
-set number              " Show line numbers
-set number relativenumber
-" set foldcolumn=3        " add margin on left vim
+" set number              " Show line numbers
+" set number relativenumber
+set foldcolumn=3        " add margin on left vim
 set linespace=15
 set linebreak           " Break lines at word (requires Wrap lines)
 set breakindent
@@ -223,3 +223,5 @@ autocmd FileType php noremap <Leader>u :call PhpInsertUse()<CR>
 
 let g:indentLine_char = '│'
 let g:indentLine_enabled = 1
+
+highlight EndOfBuffer ctermfg=black ctermbg=black
