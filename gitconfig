@@ -4,3 +4,5 @@
 [core]
     excludesfile = /home/gegeriyadi/.gitignore
     editor = vim
+[init]
+	defaultBranch = main
