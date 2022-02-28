@@ -15,6 +15,7 @@ ln -s ~/.dotfiles/gitignore ~/.gitignore
 ln -s ~/.dotfiles/bashrc ~/.bashrc
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/profile ~/.profile
+ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 mkdir -p ~/.vim/after/ftplugin
 ln -s ~/.dotfiles/vim/after/ftplugin/html.vim ~/.vim/after/ftplugin/html.vim
 ln -s ~/.dotfiles/vim/after/ftplugin/php.vim ~/.vim/after/ftplugin/php.vim
