@@ -218,3 +218,10 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
 nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
 nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+
+let g:coc_global_extensions = [
+      \'coc-prettier',
+      \'coc-vetur',
+      \'coc-json', 
+      \'@yaegassy/coc-intelephense', 
+      \]
