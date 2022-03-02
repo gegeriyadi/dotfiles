@@ -2,15 +2,11 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'EdenEast/nightfox.nvim'
 Plug 'sheerun/vim-polyglot'
-Plug 'trevordmiller/nova-vim'
-Plug 'jwalton512/vim-blade'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'junegunn/goyo.vim'
-Plug 'moll/vim-bbye'
 Plug 'iamcco/markdown-preview.vim'
-Plug 'Chiel92/vim-autoformat'
-Plug 'tomtom/tcomment_vim'
+Plug 'tpope/vim-commentary'
 Plug 'airblade/vim-gitgutter'
 Plug 'tpope/vim-fugitive'
 Plug 'Yggdroot/indentLine'
@@ -44,8 +40,6 @@ endif
 if (has("termguicolors"))
     set termguicolors
 endif
-
-" fzf vim setting
 
 " General
 " set number              " Show line numbers
@@ -84,9 +78,9 @@ inoremap kk <ESC>
 nnoremap ;; :w<CR>
 
 " map for buffer
-" nnoremap bn :bn<CR>
-" nnoremap bp :bp<CR>
-" nnoremap bd :bd<CR>
+nnoremap <leader>bn :bn<CR>
+nnoremap <leader>bp :bp<CR>
+nnoremap <leader>bd :bd<CR>
 
 " netrw setup
 let g:netrw_banner = 0
@@ -95,7 +89,7 @@ let g:netrw_banner = 0
 set mouse=a
 
 " map for noh
-nnoremap ,<space> :noh<CR>
+nnoremap <leader><space> :noh<CR>
 
 " disable arrow
 nnoremap <Up> :echomsg "use k"<cr>
@@ -115,17 +109,6 @@ nnoremap E $
 vnoremap E $
 
 filetype plugin indent on
-
-autocmd BufRead,BufNewFile *.blade.php set filetype=blade
-
-" Define some single Blade directives. This variable is used for highlighting only.
-let g:blade_custom_directives = ['datetime', 'javascript']
-"
-" " Define pairs of Blade directives. This variable is used for highlighting and indentation.
-let g:blade_custom_directives_pairs = {
-            \   'markdown': 'endmarkdown',
-            \   'cache': 'endcache',
-            \ }
 
 " emmet: to trigger press double ,,
 let g:user_emmet_leader_key=','
@@ -150,25 +133,6 @@ set laststatus=2
 " Quickly edit/reload the vimrc file
 nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
-
-" COC settings
-" Use tab for trigger completion with characters ahead and navigate.
-" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Remap keys for gotos
-nmap <silent> gd <Plug>(coc-definition)
-nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
 
 set directory=~/.vim/swapfiles/
 
@@ -207,21 +171,5 @@ autocmd Filetype go setlocal tabstop=4 softtabstop=0 noexpandtab
 autocmd Filetype php setlocal tabstop=4 softtabstop=0 noexpandtab
 autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=0 expandtab
 
-" Find files using Telescope command-line sugar.
-nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <leader>fb <cmd>Telescope buffers<cr>
-nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-" Using Lua functions
-nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-
-let g:coc_global_extensions = [
-      \'coc-prettier',
-      \'coc-vetur',
-      \'coc-json', 
-      \'@yaegassy/coc-intelephense', 
-      \]
+source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/telescope.vim
