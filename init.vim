@@ -91,9 +91,6 @@ end
 " markdown preview set
 let g:mkdp_path_to_chrome = '/mnt/c/Program\ Files\ \(x86\)/Google/Chrome/Application/chrome.exe'
 
-" python3 from powerline.vim import setup as powerline_setup
-" python3 powerline_setup()
-" python3 del powerline_setup
 set laststatus=2
 
 set directory=~/.vim/swapfiles/
