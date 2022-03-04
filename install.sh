@@ -20,6 +20,9 @@ ln -s ~/.dotfiles/profile ~/.profile
 ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
 ln -s ~/.dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
 
+# nvim keymap
+ln -s ~/.dotfiles/nvim/keymap.vim ~/.config/nvim/keymap.vim
+
 # nvim plugin config
 NVIM_PLUGINS_CONFIG_DIR=~/.config/nvim/plugins
 mkdir -p ${NVIM_PLUGINS_CONFIG_DIR}
