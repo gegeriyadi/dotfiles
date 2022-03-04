@@ -25,6 +25,7 @@ NVIM_PLUGINS_CONFIG_DIR=~/.config/nvim/plugins
 mkdir -p ${NVIM_PLUGINS_CONFIG_DIR}
 ln -s ~/.dotfiles/nvim/config-plugins/coc.vim ${NVIM_PLUGINS_CONFIG_DIR}/coc.vim
 ln -s ~/.dotfiles/nvim/config-plugins/telescope.vim ${NVIM_PLUGINS_CONFIG_DIR}/telescope.vim
+ln -s ~/.dotfiles/nvim/config-plugins/bufferline.vim ${NVIM_PLUGINS_CONFIG_DIR}/bufferline.vim
 
 mkdir -p ~/.vim/after/ftplugin
 ln -s ~/.dotfiles/vim/after/ftplugin/html.vim ~/.vim/after/ftplugin/html.vim

@@ -18,6 +18,7 @@ Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mhinz/vim-startify'
+Plug 'akinsho/bufferline.nvim'
 
 call plug#end()
 
@@ -173,3 +174,5 @@ autocmd Filetype python setlocal tabstop=4 shiftwidth=4 softtabstop=0 expandtab
 
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/bufferline.vim
+
