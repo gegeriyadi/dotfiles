@@ -19,6 +19,7 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'mhinz/vim-startify'
 Plug 'akinsho/bufferline.nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 call plug#end()
 
@@ -125,3 +126,4 @@ source ~/.config/nvim/keymap.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/bufferline.vim
+source ~/.config/nvim/plugins/treesitter.vim
