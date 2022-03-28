@@ -1,7 +1,7 @@
 lua << EOF
 require("bufferline").setup{
 options = {
-    separator_style = "slant"
+    separator_style = "thin"
     }
 }
 EOF
