@@ -130,3 +130,6 @@ export PATH=/home/gegeriyadi/.local/bin:$PATH
 
 # aliases
 alias vim="nvim"
+
+# enable vi mode
+bindkey -v
