@@ -9,7 +9,7 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/emmet-vim'
 Plug 'jiangmiao/auto-pairs'
-Plug 'junegunn/goyo.vim'
+" Plug 'junegunn/goyo.vim'
 Plug 'moll/vim-bbye'
 Plug 'iamcco/markdown-preview.vim'
 Plug 'Chiel92/vim-autoformat'
@@ -33,7 +33,7 @@ Plug 'prettier/vim-prettier', {
     \ 'php',
     \ 'python',
     \ 'html' ] }
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'SirVer/ultisnips'
 Plug 'arnaud-lb/vim-php-namespace'
 

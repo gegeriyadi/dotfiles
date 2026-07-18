@@ -25,7 +25,6 @@ fi
 if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
-
-export PATH=~/.npm-global/bin:$PATH
-export PATH=~/.composer/vendor/bin:$PATH
-export PATH=/home/gegeriyadi/.local/bin:$PATH
+. "$HOME/.cargo/env"
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"

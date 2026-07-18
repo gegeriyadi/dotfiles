@@ -1,8 +1,7 @@
+# This is Git's per-user configuration file.
 [user]
-    name = gegeriyadi
-    email = gegeriyadi81@gmail.com
-[core]
-    excludesfile = /home/gegeriyadi/.gitignore
-    editor = vim
+# Please adapt and uncomment the following lines:
+	name = Teguh Riyadi
+	email = gegeriyadi81@gmail.com
 [init]
 	defaultBranch = main

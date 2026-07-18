@@ -16,20 +16,8 @@ ln -s ~/.dotfiles/bashrc ~/.bashrc
 ln -s ~/.dotfiles/zshrc ~/.zshrc
 ln -s ~/.dotfiles/profile ~/.profile
 
-# nvim init and coc settings
-ln -s ~/.dotfiles/init.vim ~/.config/nvim/init.vim
-ln -s ~/.dotfiles/coc-settings.json ~/.config/nvim/coc-settings.json
-
-# nvim keymap
-ln -s ~/.dotfiles/nvim/keymap.vim ~/.config/nvim/keymap.vim
-
-# nvim plugin config
-NVIM_PLUGINS_CONFIG_DIR=~/.config/nvim/plugins
-mkdir -p ${NVIM_PLUGINS_CONFIG_DIR}
-ln -s ~/.dotfiles/nvim/config-plugins/coc.vim ${NVIM_PLUGINS_CONFIG_DIR}/coc.vim
-ln -s ~/.dotfiles/nvim/config-plugins/telescope.vim ${NVIM_PLUGINS_CONFIG_DIR}/telescope.vim
-ln -s ~/.dotfiles/nvim/config-plugins/bufferline.vim ${NVIM_PLUGINS_CONFIG_DIR}/bufferline.vim
-ln -s ~/.dotfiles/nvim/config-plugins/treesitter.vim ${NVIM_PLUGINS_CONFIG_DIR}/treesitter.vim
+# nvim config (lua, lazy.nvim - separate repo, self-bootstraps on first launch)
+git clone git@github.com:gegeriyadi/init.lua.git ~/.config/nvim
 
 mkdir -p ~/.vim/after/ftplugin
 ln -s ~/.dotfiles/vim/after/ftplugin/html.vim ~/.vim/after/ftplugin/html.vim
