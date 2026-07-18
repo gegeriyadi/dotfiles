@@ -139,8 +139,6 @@ export PHPENV_ROOT="$HOME/.phpenv"
 export PATH="$PHPENV_ROOT/bin:$PATH"
 eval "$(phpenv init -)"
 
-# OpenClaw Completion
-source "/home/gegeriyadi/.openclaw/completions/openclaw.zsh"
 export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 # opencode
