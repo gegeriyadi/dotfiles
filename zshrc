@@ -107,6 +107,8 @@ export NVM_DIR="$HOME/.nvm"
 alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'
 alias vim='nvim'
 
+export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
 # bun completions
 [ -s "/home/gegeriyadi/.bun/_bun" ] && source "/home/gegeriyadi/.bun/_bun"
 
