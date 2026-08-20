@@ -1,6 +1,24 @@
 {
+  "includeCoAuthoredBy": false,
   "model": "sonnet",
+  "hooks": {
+    "SessionStart": [
+      {
+        "matcher": "*",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash '/home/gegeriyadi/.claude/hooks/herdr-agent-state.sh' session",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  },
+  "alwaysThinkingEnabled": true,
   "effortLevel": "high",
+  "agent": "tech-lead",
   "tui": "fullscreen",
-  "theme": "dark"
+  "theme": "dark",
+  "agentPushNotifEnabled": true
 }

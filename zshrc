@@ -1,11 +1,14 @@
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH
+# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 
-# Path to your oh-my-zsh installation.
+# Local secrets (tidak di-commit ke dotfiles public)
+[ -f "$HOME/.env.local" ] && source "$HOME/.env.local"
+
+# Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
+# load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="robbyrussell"
@@ -70,8 +73,10 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git zsh-autosuggestions)
-
+plugins=(
+    git
+    zsh-autosuggestions
+)
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -85,29 +90,61 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='nvim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+# export ARCHFLAGS="-arch $(uname -m)"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# Set personal aliases, overriding those provided by Oh My Zsh libs,
+# plugins, and themes. Aliases can be placed here, though Oh My Zsh
+# users are encouraged to define aliases within a top-level file in
+# the $ZSH_CUSTOM folder, with .zsh extension. Examples:
+# - $ZSH_CUSTOM/aliases.zsh
+# - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+#
+#
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-alias subl='"/mnt/c/Program Files/Sublime Text 3/subl.exe"'
-alias vim='nvim'
 
+. "$HOME/.local/bin/env"
+alias subl="/mnt/c/Program\ Files/Sublime\ Text/sublime_text.exe"
+
+# Git Aliases
+alias pull='git pull'
+alias push='git push'
+alias status='git status'
+alias ga='git add'
+alias gs='git status'
+alias gc='git commit -m'
+alias gca='git commit --amend'
+alias gco='git checkout'
+alias gb='git branch'
+alias gd='git diff'
+alias gl='git log --oneline --graph --decorate'
+alias gp='git push'
+alias gpl='git pull'
+alias gcl='git clone'
+alias gr='git remote -v'
+alias gpo='git push origin'
+alias gplom='git pull origin main'
+alias gpf='git push --force'
+alias pip="python3 -m pip"
+alias pip3="python3 -m pip"
+alias python="python3"
+
+export FLYCTL_INSTALL="/home/gegeriyadi/.fly"
+export PATH="$FLYCTL_INSTALL/bin:$PATH"
 export PATH="$HOME/.config/composer/vendor/bin:$PATH"
+
 
 # bun completions
 [ -s "/home/gegeriyadi/.bun/_bun" ] && source "/home/gegeriyadi/.bun/_bun"
@@ -116,32 +153,6 @@ export PATH="$HOME/.config/composer/vendor/bin:$PATH"
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
-
-# pnpm
-export PNPM_HOME="/home/gegeriyadi/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-#export PATH="/home/gegeriyadi/.config/herd-lite/bin:$PATH"
-#export PHP_INI_SCAN_DIR="/home/gegeriyadi/.config/herd-lite/bin:$PHP_INI_SCAN_DIR"
-
-alias ga='git add'
-alias gc='git commit -m'
-alias gp='git push'
-alias gco='git checkout'
-alias gs='git status'
-alias gb='git branch'
-alias gl='git log --oneline --graph --decorate'
-alias pull='git pull'
-alias push='git push'
-
-export PHPENV_ROOT="$HOME/.phpenv"
-export PATH="$PHPENV_ROOT/bin:$PATH"
-eval "$(phpenv init -)"
-
-export XDG_RUNTIME_DIR=/run/user/$(id -u)
 
 # opencode
 export PATH=/home/gegeriyadi/.opencode/bin:$PATH
